@@ -1,0 +1,546 @@
+{
+	"name": "Battle Brothers",
+	"units": [
+		{
+			"name": "Master Brother",
+			"size": 1,
+			"quality": 3,
+			"defense": 3,
+			"equipment": [
+				{
+					"name": "Heavy Rifle",
+					"range": 24,
+					"attacks": 1,
+					"rules": ["AP(1)"]
+				},
+				{
+					"name": "CCW",
+					"range": 0,
+					"attacks": 1,
+					"rules": []
+				}
+			],
+			"rules": ["Fearless", "Hero", "Tough"],
+			"upgrades": [1, 2, 3]
+		}
+	],
+	"special_rules": [
+		{
+			"name": "Advanced Tactics",
+			"description": "The hero and its unit get +1 to hit in melee or shooting (pick one)."
+		}
+	],
+	"psychic_spells": [
+		{
+			"name": "Blurred Sight",
+			"difficulty": 4,
+			"description": "Target enemy unit within 12” takes 2 automatic hits with AP(2)."
+		}
+	],
+	"upgrades": [
+		{
+			"id": 1,
+			"options": [
+				{
+					"type": "replace",
+					"number": 1,
+					"requirements": ["Heavy Rifle", "CCW"],
+					"options": [
+						[
+							{
+								"name": "Heavy Pistol",
+								"range": 12,
+								"attacks": 1,
+								"rules": ["AP(1)"]
+							},
+							{
+								"name": "CCW",
+								"range": 0,
+								"attacks": 2,
+								"rules": []
+							}
+						],
+						[
+							{
+								"name": "Heavy Chainsaw Sword",
+								"range": 0,
+								"attacks": 4,
+								"rules": ["AP(1)"]
+							}
+						],
+						[
+							{
+								"name": "2x Energy Claws",
+								"range": 0,
+								"attacks": 2,
+								"rules": ["Rending"]
+							}
+						]
+					]
+				},
+				{
+					"type": "replace",
+					"number": 1,
+					"requirements": ["Heavy Pistol"],
+					"options": [
+						{
+							"name": "Gravity Pistol",
+							"range": 12,
+							"attacks": 3,
+							"rules": ["Rending"]
+						},
+						{
+							"name": "Plasma Pistol",
+							"range": 12,
+							"attacks": 1,
+							"rules": ["AP(4)"]
+						},
+						{
+							"name": "Storm Rifle",
+							"range": 24,
+							"attacks": 3,
+							"rules": ["AP(1)"]
+						},
+						{
+							"name": "Combat Shield",
+							"range": 0,
+							"attacks": 0,
+							"rules": ["Shield Wall"]
+						}
+					]
+				},
+				{
+					"type": "replace",
+					"number": 1,
+					"requirements": ["CCW"],
+					"options": [
+						[
+							{
+								"name": "Energy Sword",
+								"range": 0,
+								"attacks": 2,
+								"rules": ["AP(1)", "Rending"]
+							},
+							{
+								"name": "Energy Fist",
+								"range": 0,
+								"attacks": 2,
+								"rules": ["AP(4)"]
+							}
+						],
+						[
+							{
+								"name": "Energy Hammer",
+								"range": 0,
+								"attacks": 2,
+								"rules": ["Blast(3)"]
+							}
+						],
+						[
+							{
+								"name": "Chain-Fist",
+								"range": 0,
+								"attacks": 2,
+								"rules": ["AP(3)", "Deadly(3)"]
+							}
+						]
+					]
+				},
+				{
+					"type": "take",
+					"number": 1,
+					"requirements": ["Heavy Rifle"],
+					"options": [
+						[
+							{
+								"name": "Gravity Rifle",
+								"range": 18,
+								"attacks": 3,
+								"rules": ["Rending"]
+							},
+							{
+								"name": "Plasma Rifle",
+								"range": 24,
+								"attacks": 1,
+								"rules": ["AP(4)"]
+							}
+						],
+						[
+							{
+								"name": "Flamethrower",
+								"range": 12,
+								"attacks": 6,
+								"rules": []
+							}
+						],
+						[
+							{
+								"name": "Fusion Rifle",
+								"range": 12,
+								"attacks": 1,
+								"rules": ["AP(3)", "Deadly(3)"]
+							}
+						]
+					]
+				}
+			]
+		},
+		{
+			"id": 2,
+			"options": [
+				{
+					"type": "upgrade",
+					"number": 1,
+					"requirements": [],
+					"options": [
+						[
+							{
+								"name": "Jetpack",
+								"range": 0,
+								"attacks": 0,
+								"rules": ["Ambush", "Flying"]
+							}
+						],
+						[
+							{
+								"name": "Combat Bike",
+								"range": 0,
+								"attacks": 0,
+								"rules": ["Fast", "Tough(3)"]
+							},
+							{
+								"name": "Twin Heavy Rifle",
+								"range": 24,
+								"attacks": 2,
+								"rules": ["AP(1)"]
+							}
+						],
+						[
+							{
+								"name": "Destroyer Armor",
+								"range": 0,
+								"attacks": 0,
+								"rules": ["Ambush", "Tough(3)"]
+							}
+						]
+					]
+				},
+				{
+					"type": "upgrade",
+					"number": 1,
+					"requirements": [],
+					"options": [
+						{
+							"name": "Veteran Infantry",
+							"range": 0,
+							"attacks": 0,
+							"rules": []
+						}
+					]
+				}
+			]
+		},
+		{
+			"id": 3,
+			"options": [
+				{
+					"type": "upgrade",
+					"number": 1,
+					"requirements": [],
+					"options": [
+						[
+							{
+								"name": "Preacher",
+								"range": 0,
+								"attacks": 0,
+								"rules": ["War Chant"]
+							}
+						],
+						[
+							{
+								"name": "Captain",
+								"range": 0,
+								"attacks": 0,
+								"rules": ["Advanced Tactics"]
+							},
+							{
+								"name": "Engineer",
+								"range": 0,
+								"attacks": 0,
+								"rules": ["Repair"]
+							}
+						],
+						[
+							{
+								"name": "Archivist",
+								"range": 0,
+								"attacks": 0,
+								"rules": ["Psychic(1)"]
+							}
+						]
+					]
+				}
+			]
+		},
+		{
+			"id": 4,
+			"options": [
+				{
+					"type": "upgrade",
+					"number": "all",
+					"requirements": [],
+					"options": [
+						[
+							{
+								"name": "Veteran Infantry",
+								"range": 0,
+								"attacks": 0,
+								"rules": []
+							}
+						]
+					]
+				},
+				{
+					"type": "upgrade",
+					"number": 1,
+					"requirements": [],
+					"options": [
+						[
+							{
+								"name": "Battle Standard",
+								"range": 0,
+								"attacks": 0,
+								"rules": ["Fear"]
+							},
+							{
+								"name": "Medical Training",
+								"range": 0,
+								"attacks": 0,
+								"rules": []
+							}
+						]
+					]
+				},
+				{
+					"type": "replace",
+					"number": 1,
+					"requirements": ["Heavy Rifle"],
+					"options": [
+						[
+							{
+								"name": "Gravity Rifle",
+								"range": 18,
+								"attacks": 3,
+								"rules": ["Rending"]
+							},
+							{
+								"name": "Plasma Rifle",
+								"range": 24,
+								"attacks": 1,
+								"rules": ["AP(4)"]
+							},
+							{
+								"name": "Flamethrower",
+								"range": 12,
+								"attacks": 6,
+								"rules": []
+							},
+							{
+								"name": "Heavy Flamethrower",
+								"range": 12,
+								"attacks": 8,
+								"rules": ["AP(1)"]
+							},
+							{
+								"name": "Fusion Rifle",
+								"range": 12,
+								"attacks": 1,
+								"rules": ["AP(3)", "Deadly(3)"]
+							},
+							{
+								"name": "Gravity Cannon",
+								"range": 18,
+								"attacks": 6,
+								"rules": ["Rending"]
+							},
+							{
+								"name": "Heavy Machinegun",
+								"range": 30,
+								"attacks": 3,
+								"rules": ["AP(1)"]
+							},
+							{
+								"name": "Plasma Cannon",
+								"range": 30,
+								"attacks": 1,
+								"rules": ["Blast(3)", "AP(4)"]
+							},
+							{
+								"name": "Missile Launcher",
+								"range": 30,
+								"attacks": 1,
+								"rules": ["AP(2)", "Deadly(3)", "Anti-Air"]
+							},
+							{
+								"name": "Heavy Fusion Rifle",
+								"range": 12,
+								"attacks": 1,
+								"rules": ["AP(3)", "Deadly(6)"]
+							},
+							{
+								"name": "Laser Cannon",
+								"range": 36,
+								"attacks": 1,
+								"rules": ["AP(3)", "Deadly(3)"]
+							}
+						]
+					]
+				}
+			]
+		},
+		{
+			"id": 5,
+			"options": [
+				{
+					"type": "upgrade",
+					"number": "all",
+					"requirements": [],
+					"options": [
+						{
+							"name": "Veteran Infantry",
+							"range": 0,
+							"attacks": 0,
+							"rules": []
+						}
+					]
+				},
+				{
+					"type": "replace",
+					"number": 2,
+					"requirements": ["Heavy Pistol"],
+					"options": [
+						[
+							{
+								"name": "Plasma Pistol",
+								"range": 12,
+								"attacks": 1,
+								"rules": ["AP(4)"]
+							},
+							{
+								"name": "Flamethrower",
+								"range": 12,
+								"attacks": 6,
+								"rules": []
+							}
+						]
+					]
+				},
+				{
+					"type": "replace",
+					"number": 1,
+					"requirements": ["Heavy Pistol", "CCW"],
+					"options": [
+						[
+							[
+								{
+									"name": "Heavy Pistol",
+									"range": 12,
+									"attacks": 1,
+									"rules": ["AP(1)"]
+								},
+								{
+									"name": "Energy Sword",
+									"range": 0,
+									"attacks": 2,
+									"rules": ["AP(1)", "Rending"]
+								}
+							],
+							[
+								{
+									"name": "Heavy Pistol",
+									"range": 12,
+									"attacks": 1,
+									"rules": ["AP(1)"]
+								},
+								{
+									"name": "Energy Fist",
+									"range": 0,
+									"attacks": 2,
+									"rules": ["AP(4)"]
+								}
+							],
+							[
+								{
+									"name": "Heavy Pistol",
+									"range": 12,
+									"attacks": 1,
+									"rules": ["AP(1)"]
+								},
+								{
+									"name": "Energy Hammer",
+									"range": 0,
+									"attacks": 2,
+									"rules": ["Blast(3)"]
+								}
+							],
+							{
+								"name": "Heavy Chainsaw Sword",
+								"range": 0,
+								"attacks": 4,
+								"rules": ["AP(1)"]
+							}
+						]
+					]
+				}
+			]
+		},
+		{
+			"id": 6,
+			"options": [
+				{
+					"type": "replace",
+					"number": "any",
+					"requirements": ["Heavy Flamethrower"],
+					"options": [
+						{
+							"name": "Gravity Cannon",
+							"range": 18,
+							"attacks": 6,
+							"rules": ["Rending"]
+						},
+						{
+							"name": "Heavy Machinegun",
+							"range": 30,
+							"attacks": 3,
+							"rules": ["AP(1)"]
+						},
+						{
+							"name": "Plasma Cannon",
+							"range": 30,
+							"attacks": 1,
+							"rules": ["Blast(3)", "AP(4)"]
+						},
+						{
+							"name": "Missle Launcher",
+							"range": 30,
+							"attacks": 1,
+							"rules": ["AP(2)", "Deadly(3)", "Anti-Air"]
+						},
+						{
+							"name": "Heavy Fusion Rifle",
+							"range": 12,
+							"attacks": 1,
+							"rules": ["AP(3)", "Deadly(6)"]
+						},
+						{
+							"name": "Laser Cannon",
+							"range": 36,
+							"attacks": 1,
+							"rules": ["AP(3)", "Deadly(3)"]
+						}
+					]
+				}
+			]
+		}
+	]
+}
