@@ -20,8 +20,30 @@
 					"rules": []
 				}
 			],
-			"rules": ["Fearless", "Hero", "Tough"],
+			"rules": ["Fearless", "Hero", "Tough(3)"],
 			"upgrades": [1, 2, 3]
+		},
+		{
+			"name": "Battle Brothers",
+			"size": 5,
+			"quality": 3,
+			"defense": 3,
+			"equipment": [
+				{
+					"name": "Heavy Rifles",
+					"range": 24,
+					"attacks": 1,
+					"rules": ["AP(1)"]
+				},
+				{
+					"name": "CCW",
+					"range": 0,
+					"attacks": 1,
+					"rules": []
+				}
+			],
+			"rules": ["Fearless"],
+			"upgrades": [1, 4]
 		}
 	],
 	"special_rules": [

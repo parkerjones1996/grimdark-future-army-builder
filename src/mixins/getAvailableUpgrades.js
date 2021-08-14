@@ -1,21 +1,4 @@
-<template>
-	<div class="max-w-7xl mx-auto my-12 flex flex-col">
-		<Roster />
-		<div class="-my-2 overflow-x-auto sm:-mx-6 lg:-mx-8">
-			<ArmyList />
-		</div>
-	</div>
-</template>
-
-<script>
-import ArmyList from '@/components/ArmyList.vue'
-import Roster from '@/components/Roster.vue'
-
 export default {
-	components: {
-		ArmyList,
-		Roster,
-	},
 	methods: {
 		getAvailableUpgrades(unit) {
 			const upgradeLists = this.upgrades.filter((list) => unit.upgrades.includes(list.id))
@@ -37,11 +20,5 @@ export default {
 				return meetsRequirements
 			})
 		},
-		singularizeModelName(modelName) {
-			if (modelName.substring(modelName.length - 1) !== 's') return modelName
-
-			return modelName.slice(0, -1)
-		},
 	},
 }
-</script>
