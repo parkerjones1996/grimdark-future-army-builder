@@ -43,20 +43,22 @@
 			</div>
 
 			<ul class="divide-y divide-gray-200">
-				<li v-for="(model, index) in unit.models" :key="index">
+				<li v-for="(groupedModel, index) in groupedModels" :key="index">
 					<a href="#" class="block hover:bg-gray-50">
 						<div class="px-4 py-4 sm:px-6">
 							<div class="flex items-center">
-								<div class="font-medium text-indigo-600 truncate">{{ singularizeModelName(model.name) }}</div>
+								<div class="font-medium text-indigo-600 truncate">
+									{{ `${groupedModel.count}x  ${groupedModel.baseModel.name}` }}
+								</div>
 							</div>
 							<div class="mt-2 flex justify-between">
 								<div class="sm:flex">
 									<div class="flex items-center font-medium text-gray-500">
-										{{ getEquipmentList(model) }}
+										{{ getEquipmentList(groupedModel.baseModel) }}
 									</div>
 								</div>
 								<div class="ml-2 flex items-center font-medium text-gray-500">
-									{{ getRuleList(model) }}
+									{{ getRuleList(groupedModel.baseModel) }}
 								</div>
 							</div>
 						</div>
@@ -75,11 +77,34 @@ export default {
 	name: 'RosterUnit',
 	props: ['unit'],
 	mixins: [getEquipmentList, getRuleList],
-	methods: {
-		singularizeModelName(modelName) {
-			if (modelName.substring(modelName.length - 1) !== 's') return modelName
+	computed: {
+		groupedModels() {
+			// Convert the models to JSON strings for simple comparison
+			const stringifiedModels = this.unit.models.map((model) => JSON.stringify(model))
 
-			return modelName.slice(0, -1)
+			let groupedModels = []
+
+			stringifiedModels.forEach((model) => {
+				// If the grouped models does not already contain the current model, add it to the array with a count of 1
+				if (!groupedModels.some((groupedModel) => groupedModel.baseModel === model)) {
+					groupedModels.push({
+						count: 1,
+						baseModel: model,
+					})
+				} else {
+					// If the model already exists in the array, find the index of that model and increment the count
+					const existingModelIndex = groupedModels.findIndex((groupedModel) => {
+						return groupedModel.baseModel === model
+					})
+
+					groupedModels[existingModelIndex].count++
+				}
+			})
+
+			// Map through the models and turn their baseModel property back into an object
+			return groupedModels.map((groupedModel) => {
+				return { ...groupedModel, baseModel: JSON.parse(groupedModel.baseModel) }
+			})
 		},
 	},
 }
